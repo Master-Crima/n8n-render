@@ -2,20 +2,15 @@ services:
   - type: web
     name: n8n
     env: node
-    plan: free
     rootDir: n8n
-    buildCommand: npm run build
+    buildCommand: npm install
     startCommand: npx n8n start
     envVars:
       - key: N8N_BASIC_AUTH_ACTIVE
-        value: true
+        value: 'true'
       - key: N8N_BASIC_AUTH_USER
-        value: seu_usuario
+        value: 'admin'
       - key: N8N_BASIC_AUTH_PASSWORD
-        value: sua_senha_segura
-      - key: N8N_HOST
-        value: 0.0.0.0
-      - key: N8N_PORT
-        value: 5678
+        value: 'securepassword'
       - key: WEBHOOK_URL
-        value: https://n8n-seu-dominio.onrender.com/
+        value: https://your-service-name.onrender.com
